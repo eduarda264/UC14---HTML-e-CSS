@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Italianno&display=swap');
+
+body {
+    background-color: #bedfff;
+    margin: 0;
+    padding: 20px;
+}
+
+div {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #e7f4ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-family: 'Elms Sans', sans-serif;
+    font-size: 1.8em;
+    text-align: center;
+    color: #354976;
+}
+
+h2 {
+    font-family: 'Elms Sans', sans-serif;
+    font-size: 1.5em;
+    color: #568fc8;
+    text-align: center;
+    margin-top: 10px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: 20px auto;
+    width: 400px;
+    border-radius: 20px;
+}
+
+p {
+    font-family: 'Elms Sans', sans-serif;
+    font-size: 1.2em;
+    color: #354976;
+    text-align: justify;
+    margin-top: 10px;
+}
+
