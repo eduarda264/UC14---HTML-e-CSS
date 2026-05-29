@@ -1,0 +1,124 @@
+/*Reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#titulo {
+    color: #e0e0e0;
+}
+
+#propaganda {
+    color: #ccd5e0;
+    font-size: 16px;
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+
+/*Espaçamento Geral*/
+body {
+  font-family: Arial, sans-serif;
+  background-color: #262c65;
+  padding: 40px;
+}
+
+h1 {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.cards-gerais  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    
+}
+
+/* Construção do Card */
+
+.card {
+  background-color: #4853cb;
+  border: 1px solid ;
+  border-radius: 12px;
+  width: 300px;
+  margin-bottom: 24px;
+}
+
+/* Ajustar imagem */
+
+.card img {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Padding */
+
+.card-conteudo {
+  padding: 16px;
+}
+
+/* Espaçamento Interno */
+
+.card h2 {
+  margin-bottom: 4px;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+.categoria {
+  color: #dce2e9;
+  font-size: 13px;
+  margin-bottom: 12px;
+  padding: 5px;
+}
+
+.descricao {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.preco {
+  font-size: 20px;
+  font-weight: bold;
+  color: #eff2ff;
+  margin-bottom: 16px;
+  padding: 5px;
+}
+
+/* Botão */
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #22212d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+button:hover {
+    transform: scale(1.00);
+    background-color: #2ecc71;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#voltar-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #22212d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
