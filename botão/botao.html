@@ -2,12 +2,56 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="botao.css">
     <title>Botão Animado</title>
 </head>
 <body>
 
     <button class="btn-animado">Clique Aqui</button>
+
+    <style>
+            body {
+            margin: 50px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+
+            /* Aplicando a animação */
+            animation: moverBotao 3s infinite;
+            position: relative;
+        }
+
+        /* Criando a animação */
+        @keyframes moverBotao {
+            0% {
+                left: 0;
+                background-color: rgb(255, 0, 140);
+            }
+
+            50% {
+                left: 300px;
+                background-color: rgb(255, 126, 197);
+            }
+
+            100% {
+                left: 0;
+                background-color: rgb(159, 5, 90);
+            }
+        }
+    </style>
 
 </body>
 </html>
