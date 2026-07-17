@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Prime | Barbearia Premium</title>
+    <style>
+        /* --- CONFIGURAÇÕES GERAIS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --cor-principal: #111111;
+            --cor-secundaria: #1a1a1a;
+            --cor-destaque: #c5a880; /* Dourado Premium */
+            --cor-texto: #ffffff;
+            --cor-texto-mutado: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--cor-principal);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--cor-destaque);
+            color: var(--cor-principal);
+            padding: 12px 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--cor-destaque);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--cor-destaque);
+        }
+
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 50px;
+            color: var(--cor-destaque);
+        }
+
+        /* --- HEADER & NAVEGAÇÃO --- */
+        header {
+            background-color: rgba(17, 17, 17, 0.95);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--cor-destaque);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul a {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav ul a:hover {
+            color: var(--cor-destaque);
+        }
+
+        /* --- SEÇÃO INÍCIO (HERO) --- */
+        #inicio {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1920') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 90px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--cor-texto-mutado);
+            margin-bottom: 30px;
+        }
+
+        /* --- SEÇÃO SERVIÇOS --- */
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .servico-card {
+            background-color: var(--cor-secundaria);
+            border: 1px solid #222;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .servico-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cor-destaque);
+        }
+
+        .servico-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .servico-info {
+            padding: 25px;
+        }
+
+        .servico-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .servico-info .preco {
+            color: var(--cor-destaque);
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn-agendar-todos {
+            display: block;
+            width: fit-content;
+            margin: 40px auto 0 auto;
+        }
+
+        /* --- SEÇÃO PROFISSIONAIS --- */
+        .profissionais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .profissional-card {
+            background-color: var(--cor-secundaria);
+            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #222;
+            padding-bottom: 25px;
+        }
+
+        .profissional-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .profissional-card h3 {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .profissional-card p {
+            color: var(--cor-destaque);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* --- SEÇÃO SOBRE NÓS --- */
+        .sobre-conteudo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .sobre-texto h3 {
+            font-size: 1.8rem;
+            color: var(--cor-destaque);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .sobre-texto p {
+            color: var(--cor-texto-mutado);
+            margin-bottom: 15px;
+        }
+
+        .sobre-img img {
+            border-radius: 8px;
+            border: 2px solid var(--cor-destaque);
+        }
+
+        /* --- SEÇÃO CONTATO --- */
+        .contato-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contato-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--cor-destaque);
+            text-transform: uppercase;
+        }
+
+        .contato-info p {
+            margin-bottom: 15px;
+            color: var(--cor-texto-mutado);
+        }
+
+        .contato-info strong {
+            color: var(--cor-texto);
+        }
+
+        .form-contato {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-grupo input, .form-grupo textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--cor-secundaria);
+            border: 1px solid #333;
+            color: var(--cor-texto);
+            border-radius: 4px;
+        }
+
+        .form-grupo input:focus, .form-grupo textarea:focus {
+            outline: none;
+            border-color: var(--cor-destaque);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #0a0a0a;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+            color: var(--cor-texto-mutado);
+            border-top: 1px solid #222;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .sobre-conteudo, .contato-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">URBAN<span>PRIME</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#profissionais">Profissionais</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Viva a Experiência Premium</h1>
+                <p>Mais que um corte de cabelo, um momento de estilo, cuidado e alta gastronomia integrado ao seu visual.</p>
+                <a href="#contato" class="btn">Agende seu Horário</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <div class="container">
+            <h2 class="titulo-secao">Nossos Serviços</h2>
+            <div class="servicos-grid">
+                
+                <div class="servico-card">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=600" alt="Corte de Cabelo" class="servico-img">
+                    <div class="servico-info">
+                        <h3>Corte Urban</h3>
+                        <p class="preco">R$ 60,00</p>
+                        <p>Corte personalizado lavado com produtos premium e finalização com pomada.</p>
+                    </div>
+                </div>
+
+                <div class="servico-card">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=600" alt="Barba" class="servico-img">
+                    <div class="servico-info">
+                        <h3>Barba de Respeito</h3>
+                        <p class="preco">R$ 50,00</p>
+                        <p>Barba feita com toalha quente, óleo hidratante e massagem facial.</p>
+                    </div>
+                </div>
+
+                <div class="servico-card">
+                    <img src="https://images.unsplash.com/photo-1593702295094-aea22597af65?q=80&w=600" alt="Combo Cabelo e Barba" class="servico-img">
+                    <div class="servico-info">
+                        <h3>Combo Prime</h3>
+                        <p class="preco">R$ 100,00</p>
+                        <p>O pacote completo: Seu corte e sua barba alinhados pelos melhores profissionais.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <a href="#contato" class="btn btn-agendar-todos">Agendar um Serviço</a>
+        </div>
+    </section>
+
+    <section id="profissionais">
+        <div class="container">
+            <h2 class="titulo-secao">Nossos Especialistas</h2>
+            <div class="profissionais-grid">
+                
+                <div class="profissional-card">
+                    <img src="https://images.unsplash.com/photo-1605462863863-10d9e47e15ee?q=80&w=500" alt="Barbeiro Carlos" class="profissional-img">
+                    <h3>Carlos Silva</h3>
+                    <p>Master Barber & Visagista</p>
+                    <a href="#contato" class="btn">Agendar com Carlos</a>
+                </div>
+
+                <div class="profissional-card">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=500" alt="Barbeiro Marcos" class="profissional-img">
+                    <h3>Marcos Rodrigues</h3>
+                    <p>Especialista em Barba</p>
+                    <a href="#contato" class="btn">Agendar com Marcos</a>
+                </div>
+
+                <div class="profissional-card">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=500" alt="Barbeira Amanda" class="profissional-img">
+                    <h3>Amanda Costa</h3>
+                    <p>Hair Stylist Premium</p>
+                    <a href="#contato" class="btn">Agendar com Amanda</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container">
+            <h2 class="titulo-secao">Sobre Nós</h2>
+            <div class="sobre-conteudo">
+                <div class="sobre-texto">
+                    <h3>Tradição moderna e elegância</h3>
+                    <p>Fundada em 2026, a Urban Prime nasceu com a proposta de resgatar o atendimento clássico das antigas barbearias aliado ao que há de mais moderno no mercado de estética masculina.</p>
+                    <p>Nosso espaço foi planejado para oferecer conforto, contando com área de lazer, bebidas selecionadas e um ambiente focado no seu bem-estar enquanto cuidamos do seu estilo.</p>
+                </div>
+                <div class="sobre-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlX3kmANOQXx6SKxxbhypYuHWngUJrhPN43I7sTehObA&s=10" alt="Interior da Barbearia Urban Prime">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="container">
+            <h2 class="titulo-secao">Agende ou Fale Conosco</h2>
+            <div class="contato-grid">
+                
+                <div class="contato-info">
+                    <h3>Informações de Contato</h3>
+                    <p><strong>Endereço:</strong> Av. Paulista, 1000 - São Paulo, SP</p>
+                    <p><strong>Telefone/WhatsApp:</strong> (11) 99999-8888</p>
+                    <p><strong>E-mail:</strong> contato@urbanprime.com</p>
+                    <br>
+                    <h3>Horário de Funcionamento</h3>
+                    <p>Terça a Sexta: 09h às 20h</p>
+                    <p>Sábado: 08h às 18h</p>
+                </div>
+
+                <form class="form-contato" action="#" method="POST" onsubmit="alert('Simulação de envio! Como solicitado, não há JavaScript ativo de funcionamento real.'); return false;">
+                    <div class="form-grupo">
+                        <input type="text" placeholder="Seu Nome Completo" required>
+                    </div>
+                    <div class="form-grupo">
+                        <input type="tel" placeholder="Seu WhatsApp" required>
+                    </div>
+                    <div class="form-grupo">
+                        <input type="date" required>
+                    </div>
+                    <div class="form-grupo">
+                        <textarea rows="4" placeholder="Escolha o profissional, serviço ou deixe sua mensagem..."></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar Solicitação</button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Urban Prime Barbearia. Todos os direitos reservados. Inspirado no conceito Barbazul.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
