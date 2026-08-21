@@ -1,0 +1,42 @@
+/* Reset básico */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo base da página */
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+/* Container centralizado */
+.container {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#titulo {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+#temperatura {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+#mensagem {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
